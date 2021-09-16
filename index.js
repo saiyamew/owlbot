@@ -32,15 +32,29 @@ client.on('ready', () => {
 ${client.user.tag}!`)
 })
 client.on('message', message => {
-    switch (message.content) {
-        case '.owl':
-            //API WAY V1
-            getOwl()
+    //GET Owl functionality - if message is ".owl", retrieve and send an owl
+    if (message.content == '.owl') {
+        getOwl()
             .then(res => {
                 console.log('Summoning Owl: ' + res)                    
                 message.channel.send(res);
             })
-            break;
+    }
+    //POST Owl functionality - if message meets owl requirements, add an owl to the rookery
+    if (message.content.startsWith('.owlAdd')) {
+        /*Check if file extension is valid - FIX THIS 
+        if(message.content.endsWith()) {
+
+        }
+        */
+        /*
+        //POST Owl command - make a function for this!
+        //THEN return the response in a message
+        .then(res => {
+            console.log('Attempted to add Owl. Result: ' + res)
+            message.channel.send(res);
+        })
+        */        
     }
 })
 
