@@ -3,7 +3,7 @@
 FROM node:14-slim
 
 # Create and change to the app directory.
-WORKDIR /home/crazy86/Owlbot/v1
+WORKDIR ~/Owlbot/v2
 
 # Copy application dependency manifests to the container image.
 # A wildcard is used to ensure copying both package.json AND package-lock.json (when available).
